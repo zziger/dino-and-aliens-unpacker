@@ -68,6 +68,7 @@ namespace DinoAndAliensUnpacker
 
                         Xor(data, name);
 
+                        Console.WriteLine($"Packing {name}...");
                         writer.Write(Encoding.UTF8.GetBytes(name));
                         writer.Write('\0');
                         writer.Write(len);
