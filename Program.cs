@@ -45,6 +45,9 @@ namespace DinoAndAliensUnpacker
 
                         var path = Path.Combine(basePath, name);
 
+                        var directory = Path.GetDirectoryName(path);
+                        if (directory != null) Directory.CreateDirectory(directory);
+                        
                         Console.WriteLine($"Unpacking {name}...");
                         Xor(data, name);
                         File.WriteAllBytes(path, data);
